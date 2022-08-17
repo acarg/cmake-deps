@@ -1,0 +1,24 @@
+name: Build
+
+on:
+  push:
+    branches:
+    - 'main'
+  pull_request:
+    branches:
+    - '*'
+
+jobs:
+  ubuntu:
+    name: ${{ matrix.ubuntu_image }}
+    runs-on: ${{ matrix.ubuntu_image }}
+    strategy:
+      fail-fast: false
+      matrix:
+        ubuntu_image: [ubuntu-18.04, ubuntu-20.04, ubuntu-22.04]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Configure
+        run: cmake -DCMAKE_PREFIX_PATH=/home/runner/work/cmake-deps/cmake-deps/install -DCMAKE_INSTALL_PREFIX=install -Bbuild -Sdependencies
+      - name: Build
+        run: cmake --build build
