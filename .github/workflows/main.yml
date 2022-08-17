@@ -19,6 +19,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Configure
-        run: cmake -DCMAKE_PREFIX_PATH=/home/runner/work/cmake-deps/cmake-deps/install -DCMAKE_INSTALL_PREFIX=install -Bbuild -Sdependencies
+        run: cmake -DCMAKE_PREFIX_PATH=${GITHUB_WORKSPACE}/install -DCMAKE_INSTALL_PREFIX=install -Bbuild -Sdependencies
       - name: Build
         run: cmake --build build
