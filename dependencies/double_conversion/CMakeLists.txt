@@ -5,9 +5,11 @@ include(ExternalProject)
 
 list(APPEND CMAKE_ARGS
     "-DCMAKE_INSTALL_PREFIX:PATH=${CMAKE_INSTALL_PREFIX}"
+    "-DCMAKE_PREFIX_PATH:PATH=${CMAKE_PREFIX_PATH}"
     "-DCMAKE_TOOLCHAIN_FILE:PATH=${CMAKE_TOOLCHAIN_FILE}"
     "-DCMAKE_BUILD_TYPE=Release"
     "-DBUILD_SHARED_LIBS=OFF"
+    "-DBUILD_TESTING=OFF"
     )
 
 message(STATUS "Preparing external project \"double_conversion\" with args:")
