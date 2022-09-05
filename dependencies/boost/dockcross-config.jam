@@ -1,0 +1,5 @@
+import os ;
+
+using clang : arm : [ os.environ CXX ] :
+<cxxflags>"-fPIC"
+<cflags>"-fPIC" ;
