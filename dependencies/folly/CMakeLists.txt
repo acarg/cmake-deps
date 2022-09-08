@@ -14,6 +14,7 @@ list(APPEND CMAKE_ARGS
     "-DBUILD_BROKEN_TESTS=OFF"
     "-DBUILD_HANGING_TESTS=OFF"
     "-DBUILD_SLOW_TESTS=OFF"
+    "-DBOOST_LINK_STATIC=ON"
     )
 
 message(STATUS "Preparing external project \"folly\" with args:")
